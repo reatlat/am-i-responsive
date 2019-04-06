@@ -1,0 +1,23 @@
+# Apple macOS
+.DS_Store
+.DS_Store?
+*/.DS_Store
+
+# Work directories
+build/*
+dist/*
+temp/*
+
+# Node files
+node_modules
+.sass-cache
+
+# IntelliJ IDEA
+.idea
+
+# Includes directory
+includes/fontello-*
+!includes/fontello-*.zip
+
+# custom
+reatlat*
