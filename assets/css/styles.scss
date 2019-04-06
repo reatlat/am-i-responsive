@@ -1,12 +1,10 @@
-@font-face {
-    font-family: 'RobotoMedium';
-    src: url('/fonts/Roboto-Medium-webfont.eot');
-    src: url('/fonts/Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/Roboto-Medium-webfont.woff') format('woff'),
-         url('/fonts/Roboto-Medium-webfont.ttf') format('truetype'),
-         url('/fonts/Roboto-Medium-webfont.svg#RobotoMedium') format('svg');
-    font-weight: normal;
-    font-style: normal;}
+/**
+ * AIM styles
+ */
+@import "variables";
+@import "normalize/import-now";
+@import "material/import-now";
+
 
 body {background-color: #fff;
       background-image: url('../images/background.jpg');

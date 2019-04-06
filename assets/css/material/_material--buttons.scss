@@ -1,0 +1,56 @@
+.mdl-button:not(.mdl-button--icon) {
+  box-shadow: none !important;
+  text-transform: initial;
+  min-width: rem(140px);
+  height: rem(40px);
+  font-size: rem(18px);
+  font-weight: 400;
+}
+
+.mdl-button--full-width {
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  display: inline-block;
+}
+
+.mdl-button--grand {
+  height: 60px;
+  line-height: 60px;
+}
+
+.mdl-button--middle {
+  height: 48px;
+  line-height: 48px;
+}
+
+.btn {
+  &.mdl-button--small {
+    min-width: 160px !important;
+    padding: 6px !important;
+    font-size: rem(13px);
+  }
+}
+
+.mdl-button--disabled {
+  cursor: default;
+  filter: grayscale(100%);
+  pointer-events: none;
+}
+
+//override box shadow
+.mdl-button--raised:focus:not(:active) {
+  box-shadow: none;
+  //box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+  background-color: rgba(158, 158, 158, .4)
+}
+
+.mdl-ripple.is-visible {
+  opacity: .15
+}
+
+.mdl-button--colored {
+  .mdl-ripple.is-visible {
+    opacity: .3
+  }
+}
