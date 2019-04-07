@@ -23,11 +23,21 @@ mixin generatePage(language)
 
                                 #screenshot-wrapper.wrapper.ptxxl
                                     section.display
-                                        .mobile: iframe#mobile(src=demoURL)
-                                        .tablet: iframe#tablet(src=demoURL)
-                                        .laptop: iframe#laptop(src=demoURL)
-                                        .desktop: iframe#desktop(src=demoURL)
+                                        .mobile.bg-norepeat: iframe#mobile(src=demoURL)
+                                        .tablet.bg-norepeat: iframe#tablet(src=demoURL)
+                                        .laptop.bg-norepeat: iframe#laptop(src=demoURL)
+                                        .desktop.bg-norepeat: iframe#desktop(src=demoURL)
 
+                            .mdl-cell.mdl-cell--12-col.mdl-card.mdl-shadow--2dp.mha.mvxl
+                                .mdl-card__title.mdl-color--orange
+                                    h2.mdl-card__title-text.mdl-color-text--orange-50 Implementation
+                                .mdl-card__supporting-text.mha
+                                    p
+                                        | We have implemented a
+                                        code media-block
+                                        |  that is similar to bootstrap&apos;s media object, but does the alignment correctly.
+                                    h5 User Avatars
+                                    p
                     //- TODO: add button ansd script to take screenshot
                         .mdl-grid
                             .mdl-cell.mdl-cell--12-col.mha.pbmd.mdl-typography--text-right
