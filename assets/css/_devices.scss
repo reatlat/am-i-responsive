@@ -6,6 +6,8 @@
 }
 
 iframe {
+  user-select: none;
+
   transform: scale(0.219);
   -webkit-transform: scale(0.219);
   -o-transform: scale(0.219);
@@ -52,7 +54,7 @@ iframe {
   iframe {
     width: 768px;
     height: 1024px;
-    top: 36px;
+    top: 34px;
     left: 39px;
     overflow-y: hidden;
   }
@@ -60,7 +62,7 @@ iframe {
 
 .laptop {
   background-image: url("../images/laptop-screen-optimised.png");
-  width: 477px;
+  width: 476px;
   height: 307px;
   top: 264px;
   left: 560px;
@@ -89,7 +91,7 @@ iframe {
 
 .desktop {
   position: absolute;
-  width: 566px;
+  width: 564px;
   height: 538px;
   background-image: url("../images/large-screen-optimised.png");
   top: 0px;
