@@ -1,0 +1,13 @@
+//- Get content section
+mixin getSection(language, selector)
+    if selector === 'url-bar'
+        section.url
+            h1 See your site responsive
+            form#rwdform(name='rwdform')
+                input#url(type='url', name='url', value='', placeholder='http:// <-must have')
+                a.button(href='#') GO!
+
+    if selector === 'devices-wrapper'
+
+
+

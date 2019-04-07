@@ -1,0 +1,24 @@
+mixin mdl-header(language)
+    header.mdl-layout__header.mdl-layout__header--scroll
+        #maia-nav-x.mdl-layout__header-row
+            span.mdl-layout-title
+                .logo-row
+                    .lockup
+                        span.lockup-text
+                            span.lockup-brand= locales[language].navigation_bar.title
+
+            .mdl-layout-spacer
+
+            //- Right aligned menu below button
+            button#df-menu-lower-right.mdl-button.mdl-js-button.mdl-button--icon
+                i.material-icons more_vert
+            ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="df-menu-lower-right")
+                li.mdl-menu__item(disabled) Projects
+                li.mdl-menu__item: a(href="https://www.datafox.com/", target="_blank") Marketing [live]
+                li.mdl-menu__item: a(href="https://marketing-staging.datafox.com/", target="_blank") Marketing [staging]
+                li.mdl-menu__item: a(href="https://blog.datafox.com/", target="_blank") Blog [live]
+                li.mdl-menu__item: a(href="https://eng.datafox.com/", target="_blank") Engineering Blog [live]
+                li.mdl-menu__item(disabled) Downloads
+                li.mdl-menu__item: a(href="https://www.datafox.com/img/DataFox-Logos.zip") Download our logos
+                li.mdl-menu__item(disabled) Contact us
+                //li.mdl-menu__item: +mailto('support@datafox.com', 'Support')

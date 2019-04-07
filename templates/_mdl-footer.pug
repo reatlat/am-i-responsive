@@ -1,0 +1,31 @@
+mixin mdl-footer(language)
+
+    - currentTime = new Date()
+    - year = currentTime.getFullYear()
+
+    footer.mdl-mini-footer.toolbox-footer
+        .mdl-mini-footer__left-section
+            ul.mdl-mini-footer__link-list
+                li: a(href='/apps/main/') Главная
+                li: a(href='/apps/main/feedback') Отправить отзыв
+                li: a(href='//www.google.com') Google
+                li: a(href='//www.google.com/intl/en/policies') Политика конфиденциальности и Условия использования
+        .mdl-mini-footer__right-section.custom-right-footer
+            .sc-locales
+                label
+                    span Change language:
+                    select#localeselector(onchange="location = this.value;")
+                        if language === "en"
+                            option(value='/', selected='selected') English
+                        else
+                            option(value='/') English
+
+                        if language === "es"
+                            option(value='/es/', selected='selected') Español (España)
+                        else
+                            option(value='/es/') Español (España)
+
+                        if language === "ru"
+                            option(value='/ru/', selected='selected') Русский
+                        else
+                            option(value='/ru/') Русский

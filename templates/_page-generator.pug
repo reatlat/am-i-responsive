@@ -1,0 +1,39 @@
+mixin generatePage(language)
+
+    doctype html
+    html(lang=language)
+        head
+            +getHead(language)
+
+        body.ami
+            .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
+
+                +mdl-header(language)
+
+                +mdl-drawer-navigation(language)
+
+                main.mdl-layout__content
+                    .page-content
+                        .mdl-grid
+
+                            .mdl-cell.mdl-cell--12-col.mdl-shadow--2dp.mha.phxl.pvlg.bg-image--devices
+                                .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                                    input#domain.mdl-textfield__input.d-input(name='domain', type='text', value='')
+                                    label.mdl-textfield__label(for='domain')= locales[language].page_content.url_title
+
+                                .wrapper.ptxxl
+                                    section.display
+                                        .mobile: iframe#mobile(src=demoURL)
+                                        .tablet: iframe#tablet(src=demoURL)
+                                        .laptop: iframe#laptop(src=demoURL)
+                                        .desktop: iframe#desktop(src=demoURL)
+                        .mdl-grid
+                            .mdl-cell.mdl-cell--12-col.mha.pbmd.mdl-typography--text-right
+                                button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--colored
+                                    i.material-icons add
+
+
+                //- FOOTER
+                +mdl-footer(language)
+
+            +getFooter(language)
