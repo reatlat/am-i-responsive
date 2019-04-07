@@ -13,7 +13,7 @@ mixin mdl-footer(language)
         .mdl-mini-footer__right-section.custom-right-footer
             .sc-locales
                 label
-                    span Change language:
+                    span #{locales[language].footer.localeselector}:
                     select#localeselector(onchange="location = this.value;")
                         if language === "en"
                             option(value='/', selected='selected') English

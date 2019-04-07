@@ -56,7 +56,7 @@ body.ami {
   @import "devices";
 
 
-  .mdl-cell {
+  main.mdl-layout__content .page-content .mdl-grid {
     max-width: 1200px;
   }
 

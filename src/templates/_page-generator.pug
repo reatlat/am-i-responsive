@@ -14,9 +14,9 @@ mixin generatePage(language)
 
                 main.mdl-layout__content
                     .page-content
-                        .mdl-grid
+                        .mdl-grid.mha
 
-                            .mdl-cell.mdl-cell--12-col.mdl-shadow--2dp.mha.phxl.pvlg.bg-image--devices
+                            .mdl-cell.mdl-cell--12-col.mdl-shadow--2dp.phxl.pvlg.bg-image--devices
                                 .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
                                     input#domain.mdl-textfield__input.d-input(name='domain', type='text', value='')
                                     label.mdl-textfield__label(for='domain')= locales[language].page_content.url_title
@@ -28,16 +28,36 @@ mixin generatePage(language)
                                         .laptop.bg-norepeat: iframe#laptop(src=demoURL)
                                         .desktop.bg-norepeat: iframe#desktop(src=demoURL)
 
-                            .mdl-cell.mdl-cell--12-col.mdl-card.mdl-shadow--2dp.mha.mvxl
-                                .mdl-card__title.mdl-color--orange
-                                    h2.mdl-card__title-text.mdl-color-text--orange-50 Implementation
+                            .mdl-cell.mdl-cell--6-col.mdl-cell--12-col-phone.mdl-card.mdl-shadow--2dp
+                                .mdl-card__title.mdl-color--green
+                                    h2.mdl-card__title-text.mdl-color-text--green-50= locales[language].page_content.features.title
                                 .mdl-card__supporting-text.mha
-                                    p
-                                        | We have implemented a
-                                        code media-block
-                                        |  that is similar to bootstrap&apos;s media object, but does the alignment correctly.
-                                    h5 User Avatars
-                                    p
+                                    p= locales[language].page_content.features.p_1
+                                    p= locales[language].page_content.features.p_2
+                                    p= locales[language].page_content.features.p_3
+
+                            .mdl-cell.mdl-cell--6-col.mdl-cell--12-col-phone.mdl-card.mdl-shadow--2dp
+                                .mdl-card__title.mdl-color--orange
+                                    h2.mdl-card__title-text.mdl-color-text--orange-50= locales[language].page_content.viewports.title
+                                .mdl-card__supporting-text.mha
+                                    p= locales[language].page_content.viewports.p_1
+                                    p= locales[language].page_content.viewports.p_2
+                                    p= locales[language].page_content.viewports.p_3
+
+                            .mdl-cell.mdl-cell--12-col.mdl-card.mdl-shadow--2dp#about-project
+                                .mdl-card__title.mdl-color--red
+                                    h2.mdl-card__title-text.mdl-color-text--red-50= locales[language].page_content.about_project.title
+                                .mdl-card__supporting-text.mha
+                                    .mdl-grid
+                                        .mdl-cell.mdl-cell--4-col
+                                            p= locales[language].page_content.about_project.p_1
+                                            p= locales[language].page_content.about_project.p_2
+                                            p= locales[language].page_content.about_project.p_3
+
+
+
+
+
                     //- TODO: add button ansd script to take screenshot
                         .mdl-grid
                             .mdl-cell.mdl-cell--12-col.mha.pbmd.mdl-typography--text-right
