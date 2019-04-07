@@ -25,7 +25,7 @@ iframe {
 }
 
 .mobile {
-  background-image: url("../images/iphone-optimised.png");
+  background-image: url("../../assets/images/iphone-optimised.png");
   position: absolute;
   width: 95px;
   height: 196px;
@@ -43,7 +43,7 @@ iframe {
 }
 
 .tablet {
-  background-image: url("../images/ipad-optimised.png");
+  background-image: url("../../assets/images/ipad-optimised.png");
   width: 246px;
   height: 400px;
   z-index: 3;
@@ -61,7 +61,7 @@ iframe {
 }
 
 .laptop {
-  background-image: url("../images/laptop-screen-optimised.png");
+  background-image: url("../../assets/images/laptop-screen-optimised.png");
   width: 476px;
   height: 307px;
   top: 264px;
@@ -93,7 +93,7 @@ iframe {
   position: absolute;
   width: 564px;
   height: 538px;
-  background-image: url("../images/large-screen-optimised.png");
+  background-image: url("../../assets/images/large-screen-optimised.png");
   top: 0px;
   left: 220px;
   z-index: 1;

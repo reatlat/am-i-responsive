@@ -4,15 +4,13 @@
 */.DS_Store
 
 # Work directories
-build/*
-dist/*
 temp/*
 
 # Node files
 node_modules
 .sass-cache
 
-# IntelliJ IDEA
+# JetBrains IDEs
 .idea
 
 # Includes directory

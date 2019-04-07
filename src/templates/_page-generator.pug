@@ -21,16 +21,18 @@ mixin generatePage(language)
                                     input#domain.mdl-textfield__input.d-input(name='domain', type='text', value='')
                                     label.mdl-textfield__label(for='domain')= locales[language].page_content.url_title
 
-                                .wrapper.ptxxl
+                                #screenshot-wrapper.wrapper.ptxxl
                                     section.display
                                         .mobile: iframe#mobile(src=demoURL)
                                         .tablet: iframe#tablet(src=demoURL)
                                         .laptop: iframe#laptop(src=demoURL)
                                         .desktop: iframe#desktop(src=demoURL)
+
+                    //- TODO: add button ansd script to take screenshot
                         .mdl-grid
                             .mdl-cell.mdl-cell--12-col.mha.pbmd.mdl-typography--text-right
                                 button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--colored
-                                    i.material-icons add
+                                    i.material-icons photo_camera
 
 
                 //- FOOTER
