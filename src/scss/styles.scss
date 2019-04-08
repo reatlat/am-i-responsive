@@ -51,7 +51,14 @@ body.ami {
     overflow: hidden;
   }
 
+  .fullwidth {
+    width: 100%;
+  }
 
+  .ami-viewport-table {
+    border-left: 0px;
+    border-right: 0px;
+  }
 
   @import "devices";
 
