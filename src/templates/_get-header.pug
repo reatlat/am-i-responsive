@@ -40,9 +40,12 @@ mixin getHead(language)
 
     //- Global site tag (gtag.js) - Google Analytics
     script(async, src="https://www.googletagmanager.com/gtag/js?id=" + googleTagManagerID)
-    script.
+    script(type='text/javascript').
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', '#{googleTagManagerID}');
+
+    //- AddThis ID
+    script(type='text/javascript').
+        var addthis_config = {'pubid': '#{addThisPubId}'};

@@ -73,6 +73,12 @@ body.ami {
     }
   }
 
+  .display {
+    &--contents {
+      display: contents;
+    }
+  }
+
 }
 
 

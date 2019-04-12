@@ -95,12 +95,32 @@
             $('#domain').donetyping(function () {
                 window.AMI._debugLog('donetiping');
                 let url = $('#domain').val();
-                if (!url.match(/^[a-zA-Z]+:\/\//)) {
-                    url = 'http://' + url;
-                    $('#domain').val(url)
-                }
-                $("iframe").attr('src', url);
+
+                $("iframe").attr('src', window.AMI._checkUrl(url));
             }, 1000);
+
+            if (this._GET('url')) {
+                let url = window.AMI._checkUrl(this._GET('url'));
+                $('#domain-input-wrapper').addClass('is-dirty ');
+                $('#domain').val(url);
+                $("iframe").attr('src', url);
+            }
+        }
+
+
+        /**
+         * Check URL
+         * @param url
+         * @returns {string}
+         * @private
+         */
+        _checkUrl(url) {
+            if (!url.match(/^[a-zA-Z]+:\/\//)) {
+                url = 'http://' + url;
+                $('#domain').val(url)
+            }
+
+            return url;
         }
 
 

@@ -11,14 +11,15 @@ mixin generatePage(language)
 
                 +mdl-header(language)
 
-                +mdl-drawer-navigation(language)
+                //- TODO: perhaps add more optons and links to drawer
+                    +mdl-drawer-navigation(language)
 
                 main.mdl-layout__content
                     .page-content
                         .mdl-grid.mha
 
                             .mdl-cell.mdl-cell--12-col.mdl-shadow--2dp.phxl.pvlg.bg-image--devices
-                                .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                                #domain-input-wrapper.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
                                     input#domain.mdl-textfield__input.d-input(name='domain', type='text', value='')
                                     label.mdl-textfield__label(for='domain')= locales[language].page_content.url_title
 
@@ -33,26 +34,41 @@ mixin generatePage(language)
                                 .mdl-card__title.mdl-color--green
                                     h2.mdl-card__title-text.mdl-color-text--green-50= locales[language].page_content.features.title
                                 .mdl-card__supporting-text.mha
-                                    //p= locales[language].page_content.features.p_1
-                                    ul.mdl-list
+                                    ul.mdl-list.man.pan
                                         li.mdl-list__item: span.mdl-list__item-primary-content
                                             i.material-icons.mdl-list__item-icon home
-                                            | http://localhost/ works so it's great for taking screenshots of local development URLs
+                                            != locales[language].page_content.features.p_1
                                         li.mdl-list__item: span.mdl-list__item-primary-content
                                             i.material-icons.mdl-list__item-icon share
-                                            | Send someone a link with your site already embeded by using ?url=http://www.yoursite.com - example
+                                            != locales[language].page_content.features.p_2
                                         li.mdl-list__item: span.mdl-list__item-primary-content
                                             i.material-icons.mdl-list__item-icon shuffle
-                                            | Rearrange and reorder the devices by clicking and dragging on the device
+                                            != locales[language].page_content.features.p_3
                                         li.mdl-list__item
                                             span.mdl-list__item-primary-content
                                                 i.material-icons.mdl-list__item-icon bookmark
-                                                | You can check the responsiveness on any site with a single click. Simply drag to your bookmarks bar and you're away! >>
-                                            a.mdl-list__item-secondary-action(href=superLink)
-                                                i.material-icons link
+                                                != locales[language].page_content.features.p_4
+                                            a.mdl-list__item-secondary-action(href=superLink).mdl-button.mdl-js-button.mdl-button--fab.mdl-button--mini-fab.mdl-button--colored
+                                                i.material-icons add
+
+                            .mdl-cell.mdl-cell--4-col.mdl-cell--12-col-tablet.mdl-card.mdl-shadow--2dp#how-to-use
+                                .mdl-card__title.mdl-color--purple
+                                    h2.mdl-card__title-text.mdl-color-text--purple-50= locales[language].page_content.how_to_use.title
+                                .mdl-card__supporting-text.mha
+                                    ul.mdl-list.man.pan
+                                        li.mdl-list__item: span.mdl-list__item-primary-content
+                                            i.material-icons.mdl-list__item-icon filter_1
+                                            != locales[language].page_content.how_to_use.p_1
+                                        li.mdl-list__item: span.mdl-list__item-primary-content
+                                            i.material-icons.mdl-list__item-icon filter_2
+                                            != locales[language].page_content.how_to_use.p_2
+                                        li.mdl-list__item: span.mdl-list__item-primary-content
+                                            i.material-icons.mdl-list__item-icon filter_3
+                                            != locales[language].page_content.how_to_use.p_3
 
 
-                            .mdl-cell.mdl-cell--5-col.mdl-cell--12-col-phone.mdl-card.mdl-shadow--2dp
+
+                            .mdl-cell.mdl-cell--8-col.mdl-cell--12-col-tablet.mdl-card.mdl-shadow--2dp
                                 .mdl-card__title.mdl-color--orange
                                     h2.mdl-card__title-text.mdl-color-text--orange-50= locales[language].page_content.viewports.title
                                 .mdl-card__supporting-text.mhm.pan.fullwidth
@@ -74,38 +90,30 @@ mixin generatePage(language)
                                             tr
                                                 td.mdl-data-table__cell--non-numeric Mobile
                                                 td.mdl-data-table__cell--non-numeric!= locales[language].page_content.viewports.mobile
+                                    p.mtsm.mhmd!= locales[language].page_content.viewports.note
 
-
-                            .mdl-cell.mdl-cell--12-col.mdl-card.mdl-shadow--2dp#how-to-use
-                                .mdl-card__title.mdl-color--purple
-                                    h2.mdl-card__title-text.mdl-color-text--purple-50= locales[language].page_content.how_to_use.title
-                                .mdl-card__supporting-text.mha
-                                    .mdl-grid
-                                        .mdl-cell.mdl-cell--4-col
-                                            p= locales[language].page_content.how_to_use.p_1
-                                            p= locales[language].page_content.how_to_use.p_2
-                                            p= locales[language].page_content.how_to_use.p_3
 
 
                             .mdl-cell.mdl-cell--12-col.mdl-card.mdl-shadow--2dp#about-project
                                 .mdl-card__title.mdl-color--red
                                     h2.mdl-card__title-text.mdl-color-text--red-50= locales[language].page_content.about_project.title
                                 .mdl-card__supporting-text.mha
-                                    .mdl-grid
-                                        .mdl-cell.mdl-cell--4-col
-                                            p= locales[language].page_content.about_project.p_1
-                                            p= locales[language].page_content.about_project.p_2
-                                            p= locales[language].page_content.about_project.p_3
+                                    p!= locales[language].page_content.about_project.p_1
+                                    p!= locales[language].page_content.about_project.p_2
+                                    p!= locales[language].page_content.about_project.p_3
 
 
 
 
 
                     //- TODO: add button ansd script to take screenshot
-                        .mdl-grid
-                            .mdl-cell.mdl-cell--12-col.mha.pbmd.mdl-typography--text-right
-                                button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--colored
-                                    i.material-icons photo_camera
+                    .mdl-grid
+                        .mdl-cell.mdl-cell--12-col.mha.pbmd.mdl-typography--text-right
+                            button#ami-share-buttons.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--colored
+                                i.material-icons share
+                            ul.mdl-menu.mdl-menu--top-right.mdl-js-menu.mdl-js-ripple-effect(for="ami-share-buttons")
+                                li.mdl-menu__item(disabled) Projects
+                                li.mdl-menu__item: a(href="/") Link text
 
 
                 //- FOOTER
