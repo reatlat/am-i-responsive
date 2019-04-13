@@ -4,7 +4,8 @@
 @import "variables";
 
 body.ami {
-  @import "spacing";
+  @import "vendor/spacing";
+  @import "vendor/animate";
 
   //
   //body {
@@ -60,9 +61,6 @@ body.ami {
     border-right: 0px;
   }
 
-  @import "devices";
-
-
   main.mdl-layout__content .page-content .mdl-grid {
     max-width: 1200px;
   }
@@ -79,6 +77,12 @@ body.ami {
     }
   }
 
+  footer {
+    z-index: 1010;
+  }
+
+  @import "devices";
+  @import "addthis";
 }
 
 
