@@ -47,5 +47,24 @@ mixin getHead(language)
         gtag('config', '#{googleTagManagerID}');
 
     //- AddThis ID
+        @link https://www.addthis.com/academy/the-addthis_share-variable/
+        @link https://www.addthis.com/academy/the-addthis_config-variable/
     script(type='text/javascript').
-        var addthis_config = {'pubid': '#{addThisPubId}'};
+        var addthis_share = addthis_share || {};
+            addthis_share.title = window.document.title;
+            addthis_share.url = window.location.href;
+            addthis_share.media = "";
+        var addthis_config = {
+            'pubid': '#{addThisPubId}',
+            'ui_language' : '#{language}',
+            'data_ga_property' : '#{googleTagManagerID}',
+            'data_ga_social' : true
+        };
+
+    //- Discus config
+        @link https://disqus.com/admin/universalcode/#configuration-variables
+    script(type = 'text/javascript').
+        var disqus_config = function () {
+            this.page.url = "#{pageURL}";
+            this.page.identifier = "#{pageUUID}";
+        };

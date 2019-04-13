@@ -1,0 +1,13 @@
+mixin addthis_share(language)
+    //- @link https://www.addthis.com/academy/customizing-the-addthis-toolbox/
+    #addthis-share-buttons
+        button#ami-share-buttons.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--colored
+            i.material-icons share
+        .addthis_toolbox_wrapper.animated.fadeIn
+            .addthis_toolbox.addthis_default_style.addthis_32x32_style(for="ami-share-buttons")
+                a.addthis_toolbox__item.addthis_button_compact
+                a.addthis_toolbox__item.addthis_button_linkedin
+                a.addthis_toolbox__item.addthis_button_email
+                a.addthis_toolbox__item.addthis_button_slack
+                a.addthis_toolbox__item.addthis_button_twitter
+                a.addthis_toolbox__item.addthis_button_facebook

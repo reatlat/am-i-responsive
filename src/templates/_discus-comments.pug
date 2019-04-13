@@ -1,0 +1,7 @@
+mixin discus_comments(language)
+    .mdl-cell.mdl-cell--12-col.mdl-card.mdl-shadow--2dp#disqus_comments
+        .mdl-card__title.mdl-color--orange
+            h2.mdl-card__title-text.mdl-color-text--orange-50= locales[language].discus.title
+        .mdl-card__supporting-text.mha
+            #disqus_thread
+            noscript!= locales[language].discus.noscript
