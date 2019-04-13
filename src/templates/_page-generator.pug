@@ -1,6 +1,6 @@
 mixin generatePage(language)
 
-    - superLink = "javascript:void('" + pageURL + "?url='==window.location?alert('Drag me to your bookmarks bar!'):window.location='" + pageURL + "?url='+window.location)"
+    - superLink = "javascript:void('" + pageURL + "'!==window.location.origin+'/'?window.location='" + pageURL + "?url='+window.location.origin+window.location.pathname)"
     doctype html
     html(lang=language)
         head
@@ -45,10 +45,10 @@ mixin generatePage(language)
                                             i.material-icons.mdl-list__item-icon shuffle
                                             != locales[language].page_content.features.p_3
                                         li.mdl-list__item
-                                            span.mdl-list__item-primary-content
+                                            span.mdl-list__item-primary-content.mrsm
                                                 i.material-icons.mdl-list__item-icon bookmark
                                                 != locales[language].page_content.features.p_4
-                                            a.mdl-list__item-secondary-action(href=superLink).mdl-button.mdl-js-button.mdl-button--fab.mdl-button--mini-fab.mdl-button--colored
+                                            a#ami-js-bookmark.mdl-list__item-secondary-action(href=superLink).mdl-button.mdl-js-button.mdl-button--fab.mdl-button--mini-fab.mdl-button--colored
                                                 i.material-icons add
 
                             .mdl-cell.mdl-cell--4-col.mdl-cell--12-col-tablet.mdl-card.mdl-shadow--2dp#how-to-use
@@ -107,8 +107,6 @@ mixin generatePage(language)
 
 
                     +addthis_share(language)
-
-
 
 
                 //- FOOTER

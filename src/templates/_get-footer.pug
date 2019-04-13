@@ -1,6 +1,10 @@
 //- Get Footer section
 mixin getFooter(language)
 
+    #ami-bookmark-snack.mdl-js-snackbar.mdl-snackbar
+        .mdl-snackbar__text
+        button.mdl-snackbar__action(type='button')
+
     //- Old jQuery need to test new one =)
         script(type='text/javascript', src='//code.jquery.com/jquery-latest.js')
         script(type='text/javascript', src='//code.jquery.com/ui/1.10.0/jquery-ui.js')
@@ -20,3 +24,14 @@ mixin getFooter(language)
         })();
     script#dsq-count-scr(type='text/javascript', src='https://https-ami-reatlat-net.disqus.com/count.js', async='')
 
+    script(type='text/javascript').
+        (function () {
+            'use strict';
+            var snackbarContainer = document.querySelector('#ami-bookmark-snack');
+            var showToastButton = document.querySelector('#ami-js-bookmark');
+            showToastButton.addEventListener('click', function () {
+                'use strict';
+                var data = {message: '#{locales[language].page_content.features.superlink}'};
+                snackbarContainer.MaterialSnackbar.showSnackbar(data);
+            });
+        }());
