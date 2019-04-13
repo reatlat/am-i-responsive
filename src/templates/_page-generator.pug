@@ -1,6 +1,6 @@
 mixin generatePage(language)
 
-    - superLink = "javascript:void('" + pageURL + "'!==window.location.origin+'/'?window.location='" + pageURL + "?url='+window.location.origin+window.location.pathname)"
+    - superLink = "javascript:void('" + pageURL + "'!==window.location.origin?window.location='" + pageURL + "?url='+window.location.origin+window.location.pathname)"
     doctype html
     html(lang=language)
         head

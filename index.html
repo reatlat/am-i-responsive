@@ -8,17 +8,23 @@
     <title>Am I Responsive?</title>
     <meta name="description" content="Show off how responsive design looks across different browsers easily with this 4 in 1 viewport tool. See how your site looks on desktop, laptop, ipad &amp; iphone."/>
     <meta name="keywords" content="some seo keywords here"/>
-    <link rel="canonical" href="https://ami.reatlat.net/"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png"/>
-    <link rel="manifest" href="/assets/favicons/site.webmanifest"/>
-    <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#2196f3"/>
+    <link rel="canonical" href="http://localhost:7883/"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:7883/assets/favicons/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:7883/assets/favicons/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:7883/assets/favicons/favicon-16x16.png"/>
+    <link rel="manifest" href="http://localhost:7883/assets/favicons/site.webmanifest"/>
+    <link rel="mask-icon" href="http://localhost:7883/assets/favicons/safari-pinned-tab.svg" color="#2196f3"/>
     <meta name="msapplication-TileColor" content="#ffc40d"/>
     <meta name="theme-color" content="#2196f3"/>
+    <meta property="og:image:height" content="1190"/>
+    <meta property="og:image:width" content="2274"/>
+    <meta property="og:title" content="Am I Responsive?"/>
+    <meta property="og:description" content="awsome shit"/>
+    <meta property="og:url" content="http://localhost:7883"/>
+    <meta property="og:image" content="http://localhost:7883/asstes/images/og-image.jpg"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Lato:100,100i,300,300i,400,400i,700,700i,900,900i"/>
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-red.min.css"/>
-    <link rel="stylesheet" href="/assets/css/styles.min.css"/><!--[if lt IE 9]>
+    <link rel="stylesheet" href="http://localhost:7883/assets/css/styles.min.css"/><!--[if lt IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -46,7 +52,7 @@
     </script>
     <script type="text/javascript">
       var disqus_config = function () {
-          this.page.url = "https://ami.reatlat.net/";
+          this.page.url = "http://localhost:7883";
           this.page.identifier = "68ed49f0-934e-47b0-ae84-75eeb4cd9875";
       };
     </script>
@@ -100,7 +106,7 @@
                   <li class="mdl-list__item"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">home</i>http://localhost/ works so it's great for taking screenshots of local development URLs</span></li>
                   <li class="mdl-list__item"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">share</i>Send someone a link with your site already embeded by using ?url=http://www.yoursite.com - <a class='display--contents' href='#{pageURL}?url=https://reatlat.net'>check example</a></span></li>
                   <li class="mdl-list__item"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">shuffle</i>Rearrange and reorder the devices by clicking and dragging on the device</span></li>
-                  <li class="mdl-list__item"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">bookmark</i>You can check the responsiveness on any site with a single click. Simply drag to your bookmarks bar the red plus-button</span><a class="mdl-list__item-secondary-action mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" href="javascript:void('https://ami.reatlat.net/?url='==window.location?alert('Drag me to your bookmarks bar!'):window.location='https://ami.reatlat.net/?url='+window.location)"><i class="material-icons">add</i></a></li>
+                  <li class="mdl-list__item"><span class="mdl-list__item-primary-content mrsm"><i class="material-icons mdl-list__item-icon">bookmark</i>You can check the responsiveness on any site with a single click. Simply drag to your bookmarks bar the red plus-button</span><a class="mdl-list__item-secondary-action mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" id="ami-js-bookmark" href="javascript:void('http://localhost:7883'!==window.location.origin?window.location='http://localhost:7883?url='+window.location.origin+window.location.pathname)"><i class="material-icons">add</i></a></li>
                 </ul>
               </div>
             </div>
@@ -194,6 +200,10 @@
         </div>
       </footer>
     </div>
+    <div class="mdl-js-snackbar mdl-snackbar" id="ami-bookmark-snack">
+      <div class="mdl-snackbar__text"></div>
+      <button class="mdl-snackbar__action" type="button"></button>
+    </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -208,5 +218,17 @@
       })();
     </script>
     <script id="dsq-count-scr" type="text/javascript" src="https://https-ami-reatlat-net.disqus.com/count.js" async=""></script>
+    <script type="text/javascript">
+      (function () {
+          'use strict';
+          var snackbarContainer = document.querySelector('#ami-bookmark-snack');
+          var showToastButton = document.querySelector('#ami-js-bookmark');
+          showToastButton.addEventListener('click', function () {
+              'use strict';
+              var data = {message: 'Drag ⨁ button to your bookmarks bar!'};
+              snackbarContainer.MaterialSnackbar.showSnackbar(data);
+          });
+      }());
+    </script>
   </body>
 </html>
