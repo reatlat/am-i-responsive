@@ -24,11 +24,11 @@ mixin getHead(language)
     meta(name='theme-color', content='#2196f3')
 
     //- Opengraph metas
-    meta(property='og:image:height', content='1190')
-    meta(property='og:image:width', content='2274')
-    meta(property='og:title', content='Am I Responsive?')
-    meta(property='og:description', content='awsome shit')
-    meta(property='og:url', content=pageURL)
+    meta(property='og:image:height', content='630')
+    meta(property='og:image:width', content='1200')
+    meta(property='og:title', content=locales[language].meta.title)
+    meta(property='og:description', content=locales[language].meta.description)
+    meta(property='og:url', content=pageURL + '/')
     meta(property='og:image', content=pageURL + '/asstes/images/og-image.jpg')
 
     //- load fonts and stylesheets
@@ -59,7 +59,7 @@ mixin getHead(language)
         var addthis_share = addthis_share || {};
             addthis_share.title = window.document.title;
             addthis_share.url = window.location.href;
-            addthis_share.media = "";
+            addthis_share.media = "#{pageURL}/asstes/images/og-image.jpg";
         var addthis_config = {
             'pubid': '#{addThisPubId}',
             'ui_language' : '#{language}',
@@ -73,4 +73,5 @@ mixin getHead(language)
         var disqus_config = function () {
             this.page.url = "#{pageURL}";
             this.page.identifier = "#{pageUUID}";
+            this.page.language = "#{language}";
         };
