@@ -75,3 +75,18 @@ mixin getHead(language)
             this.page.identifier = "#{pageUUID}";
             this.page.language = "#{language}";
         };
+
+    //- Mdl popup messages
+    script(type = 'text/javascript').
+        window.ami_config = {
+            "information" : {
+                "title" : "!{locales[language].popup.information.title}",
+                "content" : "!{locales[language].popup.information.content}"
+            },
+            "action" : {
+                "title" : "!{locales[language].popup.action.title}",
+                "negative_title" : "!{locales[language].popup.action.negative}",
+                "positive_title" : "!{locales[language].popup.action.positive}",
+                "content" : "!{locales[language].popup.action.content}"
+            },
+        };

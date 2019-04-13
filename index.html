@@ -29,12 +29,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UX-123456789-0"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-108194111-2"></script>
     <script type="text/javascript">
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'UX-123456789-0');
+      gtag('config', 'UA-108194111-2');
       
     </script>
     <script type="text/javascript">
@@ -45,7 +45,7 @@
       var addthis_config = {
           'pubid': 'ra-5cb0c83edcbe424b',
           'ui_language' : 'en',
-          'data_ga_property' : 'UX-123456789-0',
+          'data_ga_property' : 'UA-108194111-2',
           'data_ga_social' : true
       };
       
@@ -55,6 +55,21 @@
           this.page.url = "http://localhost:7883";
           this.page.identifier = "68ed49f0-934e-47b0-ae84-75eeb4cd9875";
           this.page.language = "en";
+      };
+      
+    </script>
+    <script type="text/javascript">
+      window.ami_config = {
+          "information" : {
+              "title" : "Information",
+              "content" : "AAA"
+          },
+          "action" : {
+              "title" : "Action",
+              "negative_title" : "Nope",
+              "positive_title" : "I Agree",
+              "content" : "<h1>AAA</h1>"
+          },
       };
     </script>
   </head>
@@ -182,22 +197,10 @@
       <footer class="mdl-mini-footer toolbox-footer">
         <div class="mdl-mini-footer__left-section">
           <ul class="mdl-mini-footer__link-list">
-            <li><a href="/apps/main/">Главная</a></li>
-            <li><a href="/apps/main/feedback">Отправить отзыв</a></li>
-            <li><a href="//www.google.com">Google</a></li>
-            <li><a href="//www.google.com/intl/en/policies">Политика конфиденциальности и Условия использования</a></li>
+            <li><a href="https://github.com/reatlat/am-i-responsive">Source code on GitHub</a></li>
+            <li><a id="show-action" href="#">#show-action</a></li>
+            <li><a id="show-info" href="#">#show-info</a></li>
           </ul>
-        </div>
-        <div class="mdl-mini-footer__right-section custom-right-footer">
-          <div class="sc-locales">
-            <label><span>Change language:</span>
-              <select id="localeselector" onchange="location = this.value;">
-                <option value="/" selected="selected">English</option>
-                <option value="/es/">Español (España)</option>
-                <option value="/ru/">Русский</option>
-              </select>
-            </label>
-          </div>
         </div>
       </footer>
     </div>
@@ -207,6 +210,7 @@
     </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <script type="text/javascript" src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js"></script>
     <script type="text/javascript" src="/assets/js/scripts.min.js"></script>
@@ -218,7 +222,7 @@
           (d.head || d.body).appendChild(s);
       })();
     </script>
-    <script id="dsq-count-scr" type="text/javascript" src="https://https-ami-reatlat-net.disqus.com/count.js" async=""></script>
+    <script id="dsq-count-scr" type="text/javascript" src="https://#{disqusCommentsId}.disqus.com/count.js" async=""></script>
     <script type="text/javascript">
       (function () {
           'use strict';

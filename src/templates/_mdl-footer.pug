@@ -6,10 +6,11 @@ mixin mdl-footer(language)
     footer.mdl-mini-footer.toolbox-footer
         .mdl-mini-footer__left-section
             ul.mdl-mini-footer__link-list
-                li: a(href='/apps/main/') Главная
-                li: a(href='/apps/main/feedback') Отправить отзыв
-                li: a(href='//www.google.com') Google
-                li: a(href='//www.google.com/intl/en/policies') Политика конфиденциальности и Условия использования
+                li: a(href='https://github.com/reatlat/am-i-responsive') Source code on GitHub
+                li: a#show-action(href='#') #show-action
+                li: a#show-info(href='#') #show-info
+
+    //- TODO: include after ready translations
         .mdl-mini-footer__right-section.custom-right-footer
             .sc-locales
                 label

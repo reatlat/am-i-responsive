@@ -2,58 +2,8 @@
 
 (function ($) {
 
-    /**
-     * $('#element').donetyping(callback[, timeout=1000])
-     *
-     * source: http://stackoverflow.com/a/14042239/3705299
-     *
-     * Fires callback when a user has finished typing. This is determined by the time elapsed
-     * @callback: function to be called when even triggers
-     * @timeout:  (default=1000) timeout, in ms, to to wait before triggering event if not caused by blur.
-     * Requires jQuery 1.7+
-     * Tested with jQuery 1.11.3
-     * @link https://gist.github.com/reatlat/88aed7c17acaeea99fbd58a5d99cb7e3
-     */
-    $.fn.extend({
-
-        donetyping: function (callback, timeout) {
-
-            timeout = timeout || 1e3; // 1 second default timeout
-
-            var timeoutReference,
-
-                doneTyping = function (el) {
-
-                    if (!timeoutReference) return;
-                    timeoutReference = null;
-                    callback.call(el);
-                };
-            return this.each(function (i, el) {
-                var $el = $(el);
-                // Chrome Fix (Use keyup over keypress to detect backspace)
-                // thank you @palerdot
-                $el.is(':input') && $el.on('keyup keypress paste', function (e) {
-                    // This catches the backspace button in chrome, but also prevents
-                    // the event from triggering too preemptively. Without this line,
-                    // using tab/shift+tab will make the focused element fire the callback.
-                    if (e.type == 'keyup' && e.keyCode != 8) return;
-
-                    // Check if timeout has been set. If it has, "reset" the clock and
-                    // start over again.
-                    if (timeoutReference) clearTimeout(timeoutReference);
-                    timeoutReference = setTimeout(function () {
-                        // if we made it here, our timeout has elapsed. Fire the
-                        // callback
-                        doneTyping(el);
-                    }, timeout);
-                }).on('blur', function () {
-                    // If we can, fire the event since we're leaving the field
-                    doneTyping(el);
-                });
-            });
-        }
-    });
-
+    //@prepros-prepend vendor/_mdl-jquery-modal-dialog.js
+    //@prepros-prepend vendor/_jquery-donetyping.js
 
     class AMI {
 
@@ -117,6 +67,27 @@
                 $('#domain').val(url);
                 $("iframe").attr('src', url);
             }
+
+
+            $('#show-info').click(function () {
+                showDialog({
+                    title: window.ami_config.information.title,
+                    text: window.ami_config.information.content
+                })
+            });
+            $('#show-action').click(function () {
+                showDialog({
+                    title: window.ami_config.action.title,
+                    text: window.ami_config.action.content,
+                    positive: {
+                        title: window.ami_config.action.positive_title,
+                        onClick: function (e) {
+                            alert('Action performed!');
+                        }
+                    }
+                });
+            });
+
         }
 
 
