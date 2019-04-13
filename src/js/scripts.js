@@ -58,7 +58,7 @@
                 window.addthis_share.title = window.document.title + " - " + url;
                 window.addthis.toolbox('.addthis_toolbox');
 
-                $("iframe").attr('src', url);
+                $("#screenshot-wrapper iframe").attr('src', url);
             }, 1000);
 
             if (this._GET('url')) {
@@ -66,7 +66,7 @@
                 let url = window.AMI._checkUrl(this._GET('url'));
                 $('#domain-input-wrapper').addClass('is-dirty');
                 $('#domain').val(url);
-                $("iframe").attr('src', url);
+                $("#screenshot-wrapper iframe").attr('src', url);
             }
 
             $('.mdl-js-popup').on('click', function (event) {
