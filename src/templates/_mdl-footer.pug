@@ -9,9 +9,9 @@ mixin mdl-footer(language)
                 li: a(href='https://github.com/reatlat/am-i-responsive', rel='nofollow noopener' target='_blank')= locales[language].footer.menu.github
                 li: a(href='https://github.com/reatlat/am-i-responsive/issues/new/choose', rel='nofollow noopener' target='_blank')= locales[language].footer.menu.issue
                 li: a.mdl-js-popup(href='#', data-mdl-popup-action='gdpr')= locales[language].footer.menu.gdpr
-                li: a.mdl-js-popup(href='#', data-mdl-popup-action='tos')= locales[language].footer.menu.tos
+                //-li: a.mdl-js-popup(href='#', data-mdl-popup-action='tos')= locales[language].footer.menu.tos
                 li: a.mdl-js-popup(href='#', data-mdl-popup-action='mit')= locales[language].footer.menu.mit
-                li: a(href='https://reatlat.net/contact/?utm_source=contact&utm_medium=projects&utm_campaign=AMI')= locales[language].footer.menu.contact
+                li: a(href='https://reatlat.net/contact/?utm_source=contact&utm_medium=projects&utm_campaign=AMI' target='_blank')= locales[language].footer.menu.contact
 
     //- TODO: include after ready translations
         .mdl-mini-footer__right-section.custom-right-footer

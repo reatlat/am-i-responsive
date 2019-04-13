@@ -28,33 +28,29 @@ mixin getFooter(language)
     //- Mdl popup messages
     script(type = 'text/javascript').
         window.ami_config = {
-            'tos': {
-                'title': '!{locales[language].popup.tos.title}',
-                'content': '!{locales[language].popup.tos.content}'
+            "tos": {
+                "title": "!{locales[language].popup.tos.title}",
+                "content": "!{locales[language].popup.tos.content}"
             },
-            'gdpr': {
-                'title': '!{locales[language].popup.gdpr.title}',
-                'content': '!{locales[language].popup.gdpr.content}'
+            "gdpr": {
+                "title": "!{locales[language].popup.gdpr.title}",
+                "content": "!{locales[language].popup.gdpr.content}"
             },
-            'mit': {
-                'title': '!{locales[language].popup.mit.title}',
-                'content': '!{locales[language].popup.mit.content}'
+            "mit": {
+                "title": "!{locales[language].popup.mit.title}",
+                "content": "!{locales[language].popup.mit.content}"
             },
-            'cookies': {
-                'title': '!{locales[language].popup.cookies.title}',
-                'negative_title': '!{locales[language].popup.cookies.negative}',
-                'positive_title': '!{locales[language].popup.cookies.positive}',
-                'content': '!{locales[language].popup.cookies.content}'
+            "cookies": {
+                "title": "!{locales[language].popup.cookies.title}",
+                "negative_title": "!{locales[language].popup.cookies.negative}",
+                "positive_title": "!{locales[language].popup.cookies.positive}",
+                "content": "!{locales[language].popup.cookies.content}"
             },
         };
 
     #ami-bookmark-snack.mdl-js-snackbar.mdl-snackbar
         .mdl-snackbar__text
         button.mdl-snackbar__action(type='button')
-
-    //- Old jQuery need to test new one =)
-        script(type='text/javascript', src='//code.jquery.com/jquery-latest.js')
-        script(type='text/javascript', src='//code.jquery.com/ui/1.10.0/jquery-ui.js')
 
     script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js')
     script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js')
