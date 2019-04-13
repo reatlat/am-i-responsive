@@ -79,14 +79,22 @@ mixin getHead(language)
     //- Mdl popup messages
     script(type = 'text/javascript').
         window.ami_config = {
-            "information" : {
-                "title" : "!{locales[language].popup.information.title}",
-                "content" : "!{locales[language].popup.information.content}"
+            'tos' : {
+                'title' : '!{locales[language].popup.tos.title}',
+                'content' : '!{locales[language].popup.tos.content}'
             },
-            "action" : {
-                "title" : "!{locales[language].popup.action.title}",
-                "negative_title" : "!{locales[language].popup.action.negative}",
-                "positive_title" : "!{locales[language].popup.action.positive}",
-                "content" : "!{locales[language].popup.action.content}"
+            'gdpr': {
+                'title': '!{locales[language].popup.gdpr.title}',
+                'content': '!{locales[language].popup.gdpr.content}'
+            },
+            'mit' : {
+                'title': '!{locales[language].popup.mit.title}',
+                'content': '!{locales[language].popup.mit.content}'
+            },
+            'cookies' : {
+                'title' : '!{locales[language].popup.cookies.title}',
+                'negative_title' : '!{locales[language].popup.cookies.negative}',
+                'positive_title' : '!{locales[language].popup.cookies.positive}',
+                'content' : '!{locales[language].popup.cookies.content}'
             },
         };

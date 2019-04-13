@@ -21,6 +21,7 @@
             this._debugLog('_init() =>', this);
             this._initTriggers();
             this._initDraggable();
+            this._EuAccCookies();
         }
 
 
@@ -47,10 +48,10 @@
             });
             $('#domain').donetyping(function () {
                 window.AMI._debugLog('donetiping');
-                let url = window.AMI._checkUrl( $('#domain').val() );
+                let url = window.AMI._checkUrl($('#domain').val());
 
                 // update url address bar
-                window.history.pushState(null,null, location.origin + '/?url=' + url);
+                window.history.pushState(null, null, location.origin + '/?url=' + url);
 
                 // update addThis @link https://www.addthis.com/academy/
                 window.addthis_share.url = window.location.href;
@@ -68,28 +69,96 @@
                 $("iframe").attr('src', url);
             }
 
-
-            $('#show-info').click(function () {
-                showDialog({
-                    title: window.ami_config.information.title,
-                    text: window.ami_config.information.content
-                })
+            $('.mdl-js-popup').on('click', function (event) {
+                event.preventDefault();
+                let target = $(event.target).attr('data-mdl-popup-action');
+                window.AMI._debugLog('Popup target', target);
+                window.AMI._openPopup(target);
             });
-            $('#show-action').click(function () {
-                showDialog({
-                    title: window.ami_config.action.title,
-                    text: window.ami_config.action.content,
-                    positive: {
-                        title: window.ami_config.action.positive_title,
-                        onClick: function (e) {
-                            alert('Action performed!');
-                        }
-                    }
-                });
-            });
-
         }
 
+
+        /**
+         * Open Popups
+         * @param target
+         * @private
+         */
+        _openPopup(target) {
+            switch (target) {
+                case "tos":
+                    showDialog({
+                        title: window.ami_config.tos.title,
+                        text: window.ami_config.tos.content
+                    });
+                    break;
+                case "gdpr":
+                    showDialog({
+                        title: window.ami_config.gdpr.title,
+                        text: window.ami_config.gdpr.content,
+                        onHidden: function (e) {
+                            // only for EU countries we made loop to get accept cookies :) F@ck GDPR law!
+                            window.AMI._EuAccCookies();
+                        }
+                    });
+                    break;
+                case "mit":
+                    showDialog({
+                        title: window.ami_config.mit.title,
+                        text: window.ami_config.mit.content
+                    });
+                    break;
+                case "cookies":
+                    showDialog({
+                        title: window.ami_config.cookies.title,
+                        text: window.ami_config.cookies.content,
+                        cancelable: false,
+                        negative: {
+                            title: window.ami_config.cookies.negative_title,
+                            onClick: function (e) {
+                                window.AMI._openPopup('gdpr');
+                            }
+                        },
+                        positive: {
+                            title: window.ami_config.cookies.positive_title,
+                            onClick: function (e) {
+                                window.AMI._debugLog('EuAccCookies accepted');
+                                Cookies.set('EuAccCookies', '1', {expires: 30, path: '/'});
+                            }
+                        }
+                    });
+                    break;
+                default:
+                // TODO: default code block :)
+            }
+        }
+
+        /**
+         * Is user come from Europe
+         * This part integrated with my NGINX server
+         */
+        _isEurope() {
+            let req = new XMLHttpRequest();
+            req.open('GET', document.location, false);
+            req.send(null);
+
+            let euCountries = ['AT', 'BE', 'BG', 'CY', 'CZ', 'DE', 'DK', 'EE', 'ES', 'FI', 'FR', 'GB', 'GR', 'HU', 'HR', 'IE', 'IT', 'LT', 'LU', 'LV', 'MT', 'NL', 'PL', 'PT', 'RO', 'SE', 'SI', 'SK'];
+
+            let isEU = euCountries.includes(req.getResponseHeader("x-country"));
+            window.AMI._debugLog('_isEurope()', isEU);
+
+            return isEU;
+        }
+
+
+        /**
+         * Set EU cookies
+         * @private
+         */
+        _EuAccCookies() {
+            if (!Cookies.get('EuAccCookies') && this._isEurope()) {
+                this._openPopup('cookies');
+            }
+        }
 
         /**
          * Check URL
@@ -107,6 +176,10 @@
         }
 
 
+        /**
+         * Make devices draggable
+         * @private
+         */
         _initDraggable() {
             let a = 3;
             $('.desktop,.laptop,.tablet,.mobile').draggable({
