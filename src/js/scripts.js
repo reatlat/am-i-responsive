@@ -222,7 +222,7 @@
     }
 
     window.AMI = new AMI({
-        debug: true
+        debug: false
     });
 
     window.AMI._init();
