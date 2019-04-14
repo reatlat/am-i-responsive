@@ -167,7 +167,7 @@
          * @private
          */
         _checkUrl(url) {
-            if (!url.match(/^[a-zA-Z]+:\/\//)) {
+            if (!url.match(/^[a-zA-Z]+:\/\//) && url !== "") {
                 url = 'http://' + url;
                 $('#domain').val(url)
             }
