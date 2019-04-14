@@ -62,6 +62,10 @@ body.ami {
     border-right: 0px;
   }
 
+  .mdl-layout__content {
+    overflow: visible !important;
+  }
+
   main.mdl-layout__content .page-content .mdl-grid {
     max-width: 1200px;
   }
@@ -78,8 +82,36 @@ body.ami {
     }
   }
 
-  footer {
+  footer.mdl-mini-footer {
     z-index: 1010;
+
+    .mdl-mini-footer__item {
+      @media (max-width: 768px) {
+        display: block;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      @media (max-width: 600px) {
+        width: 100%;
+
+      }
+
+      .sc-locales {
+        line-height: 36px;
+      }
+
+      .ami-footer-menu {
+        @media (max-width: 600px) {
+          display: block;
+          li {
+            line-height: 36px;
+          }
+        }
+      }
+    }
+
   }
 
   @import "devices";

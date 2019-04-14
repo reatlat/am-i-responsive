@@ -107,6 +107,12 @@
                         text: window.ami_config.mit.content
                     });
                     break;
+                case "about":
+                    showDialog({
+                        title: window.ami_config.about.title,
+                        text: window.ami_config.about.content
+                    });
+                    break;
                 case "cookies":
                     showDialog({
                         title: window.ami_config.cookies.title,

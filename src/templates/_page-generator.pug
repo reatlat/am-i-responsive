@@ -93,16 +93,6 @@ mixin generatePage(language)
                                     p.mtsm.mhmd!= locales[language].page_content.viewports.note
 
 
-
-                            .mdl-cell.mdl-cell--12-col.mdl-card.mdl-shadow--2dp#about-project
-                                .mdl-card__title.mdl-color--red
-                                    h2.mdl-card__title-text.mdl-color-text--red-50= locales[language].page_content.about_project.title
-                                .mdl-card__supporting-text.mha
-                                    p!= locales[language].page_content.about_project.p_1
-                                    p!= locales[language].page_content.about_project.p_2
-                                    p!= locales[language].page_content.about_project.p_3
-
-
                             +discus_comments(language)
 
 
