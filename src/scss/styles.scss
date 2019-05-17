@@ -83,6 +83,8 @@ body.ami {
   }
 
   footer.mdl-mini-footer {
+    display: block; // fallback for safari
+
     z-index: 1010;
 
     .mdl-mini-footer__item {
